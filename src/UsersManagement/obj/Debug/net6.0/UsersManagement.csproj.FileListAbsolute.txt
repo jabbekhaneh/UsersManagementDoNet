@@ -1,0 +1,12 @@
+E:\Source\UsersManagement\src\UsersManagement\bin\Debug\net6.0\UsersManagement.deps.json
+E:\Source\UsersManagement\src\UsersManagement\bin\Debug\net6.0\UsersManagement.dll
+E:\Source\UsersManagement\src\UsersManagement\bin\Debug\net6.0\UsersManagement.pdb
+E:\Source\UsersManagement\src\UsersManagement\obj\Debug\net6.0\UsersManagement.csproj.AssemblyReference.cache
+E:\Source\UsersManagement\src\UsersManagement\obj\Debug\net6.0\UsersManagement.GeneratedMSBuildEditorConfig.editorconfig
+E:\Source\UsersManagement\src\UsersManagement\obj\Debug\net6.0\UsersManagement.AssemblyInfoInputs.cache
+E:\Source\UsersManagement\src\UsersManagement\obj\Debug\net6.0\UsersManagement.AssemblyInfo.cs
+E:\Source\UsersManagement\src\UsersManagement\obj\Debug\net6.0\UsersManagement.csproj.CoreCompileInputs.cache
+E:\Source\UsersManagement\src\UsersManagement\obj\Debug\net6.0\UsersManagement.dll
+E:\Source\UsersManagement\src\UsersManagement\obj\Debug\net6.0\refint\UsersManagement.dll
+E:\Source\UsersManagement\src\UsersManagement\obj\Debug\net6.0\UsersManagement.pdb
+E:\Source\UsersManagement\src\UsersManagement\obj\Debug\net6.0\ref\UsersManagement.dll

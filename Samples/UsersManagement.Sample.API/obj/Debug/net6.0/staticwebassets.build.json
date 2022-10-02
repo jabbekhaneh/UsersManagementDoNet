@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "RRJwnrsCmUPSUdWwyZS/jBE9NgXnzPQEGjndstLF468=",
+  "Source": "UsersManagement.Sample.API",
+  "BasePath": "_content/UsersManagement.Sample.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
