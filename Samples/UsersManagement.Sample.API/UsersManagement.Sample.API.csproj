@@ -13,7 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\UsersManagement\UsersManagement.csproj" />
+	  <ProjectReference Include="..\..\src\UsersManagement.TokenBase\UsersManagement.TokenBase.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,5 +1,6 @@
-using Microsoft.OpenApi.Models;
 using UsersManagement;
+using UsersManagement.TokenBase;
+using UsersManagement.TokenBase.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -8,9 +9,24 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.UserManagementTokenApiServices(options =>
 {
     options.UseOption = UsersManagement.Options.UserManagementUseOption.Custome;
-    options.ConnectionString = "";
+    options.ConnectionString = "data source =.; initial catalog =dbJabbekhaneh; integrated security = True; MultipleActiveResultSets=True";
 });
 
+builder.Services.UsersManagementTokenBaseService(option =>
+{
+    option.ConnectionString = "data source =.; initial catalog =dbJabbekhaneh; integrated security = True; MultipleActiveResultSets=True";
+    option.DatabaseName = "dbJabbekhaneh";
+    option.IsCreateAdminUser = true;
+    option.Admin = new UserAdminOption("09107066676", "123456")
+    {
+        FirstName = "Hassan",
+        LastName = "Jabbekhaneh",
+        Email = "Jabbekhaneh@gmail.com",
+        Mobile = "09107066676",
+        Database=Database.MSQL,
+        
+    };
+});
 
 
 var app = builder.Build();

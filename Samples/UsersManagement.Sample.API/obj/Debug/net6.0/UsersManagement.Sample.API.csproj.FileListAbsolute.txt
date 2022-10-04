@@ -5,6 +5,7 @@ E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\Us
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\UsersManagement.Sample.API.runtimeconfig.json
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\UsersManagement.Sample.API.dll
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\UsersManagement.Sample.API.pdb
+E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\Dapper.dll
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
@@ -17,8 +18,16 @@ E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\Mi
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\System.Data.SqlClient.dll
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\UsersManagement.dll
+E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\UsersManagement.TokenBase.dll
+E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\UsersManagement.TokenBase.pdb
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\UsersManagement.pdb
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\obj\Debug\net6.0\UsersManagement.Sample.API.csproj.AssemblyReference.cache
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\obj\Debug\net6.0\UsersManagement.Sample.API.GeneratedMSBuildEditorConfig.editorconfig

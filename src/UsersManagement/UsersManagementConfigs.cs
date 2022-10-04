@@ -4,7 +4,6 @@ using Microsoft.OpenApi.Models;
 using UsersManagement.Common;
 using UsersManagement.Options;
 using UsersManagement.Services;
-
 namespace UsersManagement;
 
 
