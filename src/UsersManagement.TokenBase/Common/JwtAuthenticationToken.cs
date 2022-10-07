@@ -4,7 +4,7 @@ using System.Security.Claims;
 using System.Text;
 using UsersManagement.TokenBase.DTOs;
 
-namespace UsersManagement.TokenBase.Extentions;
+namespace UsersManagement.TokenBase.Common;
 
 public class JwtAuthenticationToken
 {
@@ -14,7 +14,7 @@ public class JwtAuthenticationToken
         _key = key;
     }
 
-    public  string GenerateToken(InputUserDto user, int ExpiresDay = 1)
+    public string GenerateToken(ClaimsIdentityDto user, int ExpiresDay = 1)
     {
         JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
         var tokenKey = Encoding.ASCII.GetBytes(_key);
@@ -23,12 +23,12 @@ public class JwtAuthenticationToken
 
             Subject = new ClaimsIdentity(new Claim[]
             {
-                    new Claim(ClaimTypes.Name,user.Name),
-                    new Claim(ClaimTypes.NameIdentifier,user.UserId),
-                    new Claim(ClaimTypes.Email,user.Email),
-                    new Claim(ClaimTypes.GivenName,user.GivenName),
-                    new Claim(ClaimTypes.Surname,user.Surname),
-                    new Claim(ClaimTypes.MobilePhone,user.Mobile),
+                new Claim(ClaimTypes.Name,user.Name),
+                new Claim(ClaimTypes.NameIdentifier,user.UserId),
+                new Claim(ClaimTypes.Email,user.Email),
+                new Claim(ClaimTypes.GivenName,user.GivenName),
+                new Claim(ClaimTypes.Surname,user.Surname),
+                new Claim(ClaimTypes.MobilePhone,user.Mobile),
             }),
             Expires = DateTime.UtcNow.AddDays(ExpiresDay),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey),
@@ -38,3 +38,4 @@ public class JwtAuthenticationToken
         return tokenHandler.WriteToken(token);
     }
 }
+

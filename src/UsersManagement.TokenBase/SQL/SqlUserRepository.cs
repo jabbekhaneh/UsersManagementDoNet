@@ -9,21 +9,19 @@ using UsersManagement.TokenBase.Options;
 namespace UsersManagement.TokenBase.SQL;
 public class SqlUserRepository : IUserRepository
 {
-    private readonly IDbConnection _dbConnection;
+    private  IDbConnection _dbConnection;
     private readonly IOptions<UsersManagementTokenBaseOption> _options;
-
-
-
     public SqlUserRepository(IOptions<UsersManagementTokenBaseOption> options)
     {
         _options = options;
         if (string.IsNullOrEmpty(options.Value.ConnectionString))
             throw new ArgumentNullException($"{nameof(options.Value.ConnectionString)} Checking UsersManagementTokenBaseService");
         _dbConnection = new SqlConnection(options.Value.ConnectionString);
+        
         CreateTable();
         SeadData(options.Value);
     }
-
+    //------------------------------
     #region ConfigOptions
     private void SeadData(UsersManagementTokenBaseOption option)
     {
@@ -74,14 +72,15 @@ public class SqlUserRepository : IUserRepository
         _dbConnection.Execute(query);
     }
     #endregion
-
+    //------------------------------
     public Guid CreateUser(CreateUser user)
     {
         var sqlQuery = UserCommandTextExtention.InsertQuery;
-        var newUser= MapNewUser(user);
-        _dbConnection.Execute(sqlQuery,newUser);
+        var newUser = MapNewUser(user);
+        _dbConnection.Execute(sqlQuery, newUser);
         return newUser.Id;
     }
+    //------------------------------
     public async Task<Guid> CreateUserAsync(CreateUser user)
     {
         var sqlQuery = UserCommandTextExtention.InsertQuery;
@@ -89,7 +88,8 @@ public class SqlUserRepository : IUserRepository
         await _dbConnection.ExecuteAsync(sqlQuery, newUser);
         return newUser.Id;
     }
-    private static UserRecord  MapNewUser(CreateUser user)
+    //------------------------------
+    private static UserRecord MapNewUser(CreateUser user)
     {
         return new UserRecord(user.UserName)
         {
@@ -112,6 +112,65 @@ public class SqlUserRepository : IUserRepository
             Wallet = 0,
         };
     }
+    //------------------------------
+    public bool IsExistByUserName(string username)
+    {
+        return _dbConnection
+            .ExecuteScalar<bool>(UserCommandTextExtention
+            .IsExistByUsernameQuery, new { username });
+    }
+    //------------------------------
+    public async Task<bool> IsExistByUserNameAsync(string username)
+    {
+        return await _dbConnection
+            .ExecuteScalarAsync<bool>(UserCommandTextExtention
+            .IsExistByUsernameQuery, new { username });
+    }
+    //------------------------------
+    public bool IsExistByMobile(string mobile)
+    {
+        return  _dbConnection
+            .ExecuteScalar<bool>(UserCommandTextExtention
+            .IsExistByMobileQuery, new { mobile });
+    }
+    //------------------------------
+    public async Task<bool> IsExistByMobileAsync(string mobile)
+    {
+        return await _dbConnection
+            .ExecuteScalarAsync<bool>(UserCommandTextExtention
+            .IsExistByMobileQuery, new { mobile });
+    }
+    //------------------------------
+    public bool IsExistByEmail(string email)
+    {
+        return _dbConnection
+            .ExecuteScalar<bool>(UserCommandTextExtention
+            .IsExistByEmailQuery, new { email });
+    }
+    //------------------------------
+    public async Task<bool> IsExistByEmailAsync(string email)
+    {
+        return await _dbConnection
+            .ExecuteScalarAsync<bool>(UserCommandTextExtention
+            .IsExistByEmailQuery, new { email });
+    }
+    //------------------------------
+    public async Task Update(Guid userId,UpdateUser user)
+    {
+        using (var connection = new SqlConnection(_options.Value.ConnectionString))
+        {
+            connection.Open();
+            var result = await connection.ExecuteAsync(UserCommandTextExtention
+            .Update(), new UpdateUser(userId)
+            {
 
-   
+                ConfirmCode = user.ConfirmCode,
+
+
+            });
+            
+        }
+        
+    }
+    //------------------------------
 }

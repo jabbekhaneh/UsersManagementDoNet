@@ -3,8 +3,8 @@
 internal static class UserCommandTextExtention
 {
     private static string TableName = "Users";
-    public static string CreateTableQuery(string schema="dbo")
-        =>       $"IF (NOT EXISTS (SELECT *  FROM INFORMATION_SCHEMA.TABLES WHERE " +
+    public static string CreateTableQuery(string schema = "dbo")
+        => $"IF (NOT EXISTS (SELECT *  FROM INFORMATION_SCHEMA.TABLES WHERE " +
                  $"TABLE_SCHEMA = '{schema}' AND  TABLE_NAME = '{TableName}' )) Begin " +
                  $"CREATE TABLE [{schema}].[{TableName}]( " +
                  $"Id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT (NEWID())," +
@@ -37,10 +37,15 @@ internal static class UserCommandTextExtention
 
     public static string IsExistByEmailQuery =>
          $"select count(1) from Users where Email=@Email";
-    
+
 
     public static string InsertQuery => $"INSERT INTO Users (UserName,PasswordHash,FirstName,LastName,Mobile,Email,Token,Address,ConfirmCode," +
                                  $"Job,RegsiterDate,UpdateDate,LastActivityDateUtc,IsActive,IsActiveMobile,IsActiveEmail,Wallet)" +
                                  $"VALUES (@UserName,@PasswordHash,@FirstName,@LastName,@Mobile,@Email,@Token,@Address,@ConfirmCode," +
                                  $"@Job,@RegsiterDate,@UpdateDate,@LastActivityDateUtc,@IsActive,@IsActiveMobile,@IsActiveEmail,@Wallet)";
+
+
+    public static string Update(string schema = "dbo") =>
+        "UPDATE Users  SET ConfirmCode=@ConfirmCode WHERE Id=@Id";
+                          
 }

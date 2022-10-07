@@ -12,7 +12,8 @@ builder.Services.UserManagementTokenApiServices(options =>
     options.ConnectionString = "data source =.; initial catalog =dbJabbekhaneh; integrated security = True; MultipleActiveResultSets=True";
 });
 
-builder.Services.UsersManagementTokenBaseService(option =>
+builder.Services.UsersManagementTokenBaseService("jwtAuthSecureKey_Portal_API_$$$",
+    option =>
 {
     option.ConnectionString = "data source =.; initial catalog =dbJabbekhaneh; integrated security = True; MultipleActiveResultSets=True";
     option.DatabaseName = "dbJabbekhaneh";
@@ -23,8 +24,8 @@ builder.Services.UsersManagementTokenBaseService(option =>
         LastName = "Jabbekhaneh",
         Email = "Jabbekhaneh@gmail.com",
         Mobile = "09107066676",
-        Database=Database.MSQL,
-        
+        Database = Database.MSQL,
+
     };
 });
 

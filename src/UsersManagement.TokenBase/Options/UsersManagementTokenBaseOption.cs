@@ -4,7 +4,7 @@ namespace UsersManagement.TokenBase.Options;
 
 public class UsersManagementTokenBaseOption
 {
-
+    public int ExpiresDayToken { get; set; } = 1;
     public string ConnectionString { get; set; } = string.Empty;
     public string DatabaseName { get; set; } = string.Empty;
     public string SchemaName { get; set; } = "dbo";

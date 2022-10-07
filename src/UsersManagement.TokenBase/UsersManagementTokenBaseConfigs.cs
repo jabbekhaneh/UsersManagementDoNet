@@ -8,14 +8,16 @@ namespace UsersManagement.TokenBase;
 
 public static class UsersManagementTokenBaseConfigs
 {
-    public static IServiceCollection 
-        UsersManagementTokenBaseService(this IServiceCollection services,
-        Action<UsersManagementTokenBaseOption> setupAction)
+    public static IServiceCollection
+        UsersManagementTokenBaseService(this IServiceCollection services,string tokenKey,
+        Action<UsersManagementTokenBaseOption> options)
     {
-        services.Configure<UsersManagementTokenBaseOption>(setupAction);
+        services.Configure<UsersManagementTokenBaseOption>(options);
         services.AddScoped<IUserMangementService, UserMangementTokenBaseService>();
         //-----------------------------------------
         services.AddScoped<IUserRepository, SqlUserRepository>();
+        services.AddSingleton<JwtAuthenticationToken>
+            (new JwtAuthenticationToken(tokenKey));
 
         return services;
     }
