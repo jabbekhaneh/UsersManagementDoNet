@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UsersManagement.TokenBase.Options
+namespace UsersManagement.Models.DTOs
 {
-    public class AuthOptions
+    internal class SignInDto
     {
     }
 }

@@ -1,4 +1,5 @@
-﻿namespace UsersManagement.TokenBase.Models;
+﻿namespace UsersManagement.Models;
+
 public class UserRecord
 {
     public UserRecord(string username)
@@ -7,12 +8,12 @@ public class UserRecord
     }
     public Guid Id { get; set; }
     public string UserName { get; private set; }
-    public string PasswordHash { get; set; }=string.Empty;
-    public string FirstName { get; set; }=string.Empty;
+    public string PasswordHash { get; set; } = string.Empty;
+    public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
     public string Mobile { get; set; } = string.Empty;
-    public string Email { get; set; }=string.Empty;
-    public string Token { get; set; }=string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string Token { get; set; } = string.Empty;
     public string Address { get; set; } = string.Empty;
     public string ConfirmCode { get; set; } = string.Empty;
     public string Job { get; set; } = string.Empty;

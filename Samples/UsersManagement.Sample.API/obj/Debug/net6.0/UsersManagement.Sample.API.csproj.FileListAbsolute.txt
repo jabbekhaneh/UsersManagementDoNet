@@ -26,8 +26,6 @@ E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\ru
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\UsersManagement.dll
-E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\UsersManagement.TokenBase.dll
-E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\UsersManagement.TokenBase.pdb
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\bin\Debug\net6.0\UsersManagement.pdb
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\obj\Debug\net6.0\UsersManagement.Sample.API.csproj.AssemblyReference.cache
 E:\Source\UsersManagement\Samples\UsersManagement.Sample.API\obj\Debug\net6.0\UsersManagement.Sample.API.GeneratedMSBuildEditorConfig.editorconfig

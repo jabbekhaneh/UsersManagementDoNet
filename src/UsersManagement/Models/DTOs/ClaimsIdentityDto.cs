@@ -1,6 +1,6 @@
-﻿namespace UsersManagement.TokenBase.DTOs;
+﻿namespace UsersManagement.Models.DTOs;
 
-public  class ClaimsIdentityDto
+public class ClaimsIdentityDto
 {
     public string UserId { get; set; } = string.Empty;
     public string GivenName { get; set; } = string.Empty;

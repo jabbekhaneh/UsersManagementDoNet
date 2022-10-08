@@ -1,6 +1,6 @@
-﻿namespace UsersManagement.TokenBase.Extentions.DapperExtentions;
+﻿namespace UsersManagement.SQL.TextCommands;
 
-internal static class UserCommandTextExtention
+internal static class UserCommandText
 {
     private static string TableName = "Users";
     public static string CreateTableQuery(string schema = "dbo")
@@ -39,13 +39,13 @@ internal static class UserCommandTextExtention
          $"select count(1) from Users where Email=@Email";
 
 
-    public static string InsertQuery => $"INSERT INTO Users (UserName,PasswordHash,FirstName,LastName,Mobile,Email,Token,Address,ConfirmCode," +
+    public static string InsertINTO => $"INSERT INTO Users (Id,UserName,PasswordHash,FirstName,LastName,Mobile,Email,Token,Address,ConfirmCode," +
                                  $"Job,RegsiterDate,UpdateDate,LastActivityDateUtc,IsActive,IsActiveMobile,IsActiveEmail,Wallet)" +
-                                 $"VALUES (@UserName,@PasswordHash,@FirstName,@LastName,@Mobile,@Email,@Token,@Address,@ConfirmCode," +
-                                 $"@Job,@RegsiterDate,@UpdateDate,@LastActivityDateUtc,@IsActive,@IsActiveMobile,@IsActiveEmail,@Wallet)";
+                                 $"VALUES (@Id,@UserName,@PasswordHash,@FirstName,@LastName,@Mobile,@Email,@Token,@Address,@ConfirmCode," +
+                                 $"@Job,@RegsiterDate,@UpdateDate,@LastActivityDateUtc,@IsActive,@IsActiveMobile,@IsActiveEmail,@Wallet);";
 
 
     public static string Update(string schema = "dbo") =>
         "UPDATE Users  SET ConfirmCode=@ConfirmCode WHERE Id=@Id";
-                          
+
 }
