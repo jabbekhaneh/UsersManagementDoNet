@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Web.Helpers;
 using UsersManagement.Common;
 using UsersManagement.Models.DTOs;
 using UsersManagement.Sample.API.Models;
@@ -19,6 +20,13 @@ namespace UsersManagement.Sample.API.Controllers
         #endregion
 
         #region Actions
+        //---------------------------
+        [HttpPost("[ACTION]")]
+        public async Task<IActionResult> SignInCookie(SignInDto signIn)
+        {
+            var result = await _services.SignIn(signIn);
+            return Ok(result);
+        }
         //---------------------------
         [HttpPost("[ACTION]")]
         public async Task<IActionResult> RegisterMobileUsername(RegisterMobileUsername register)
@@ -44,11 +52,11 @@ namespace UsersManagement.Sample.API.Controllers
         [HttpPost("[ACTION]")]
         public async Task<IActionResult> RegisterEmailUsername(RegisterEmailUsername register)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             var signUp = await _services.SignUpAsync(register.Email, new SignUpDto
             {
-                Password=register.Password,
+                Password = register.Password,
                 Email = register.Email,
             });
             string msg = string.Empty;
@@ -63,7 +71,6 @@ namespace UsersManagement.Sample.API.Controllers
         }
         //---------------------------
         #endregion
-
 
         #region Private Methods
         //---------------------------

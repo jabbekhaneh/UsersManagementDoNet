@@ -110,5 +110,13 @@ namespace UsersManagement.SQL
 
         }
         //------------------------------
+        public async Task<UserRecord> FindByUserNameAsync(string username)
+        {
+            var sqlQuery = UserCommandText.FindById;
+            var user = await _dbConnection
+                .QuerySingleAsync<UserRecord>(sqlQuery,new { username});
+            return user;
+        }
+        //------------------------------
     }
 }

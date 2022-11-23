@@ -48,4 +48,8 @@ internal static class UserCommandText
     public static string Update(string schema = "dbo") =>
         "UPDATE Users  SET ConfirmCode=@ConfirmCode WHERE Id=@Id";
 
+
+    public static string FindById =>
+         $"select count(1) from Users where UserName=@UserName";
+
 }

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace UsersManagement.Models.DTOs
+namespace UsersManagement.Models.DTOs;
+
+public class SignInDto
 {
-    internal class SignInDto
-    {
-    }
+    [Required]
+    public string UserName { get; set; }=string.Empty;
+    [Required]
+    public string PasswordHash { get; set; }=string.Empty;
 }

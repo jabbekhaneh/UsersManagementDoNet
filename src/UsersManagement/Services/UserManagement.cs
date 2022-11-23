@@ -24,9 +24,6 @@ namespace UsersManagement.Services
             _repository = repository;
             _tokenRepository = tokenRepository;
         }
-
-       
-
         //-----------------------------------
         public async Task<(SignUpStatus signUpStatus, Guid userId)> SignUpAsync(string username, SignUpDto signUp)
         {
@@ -106,7 +103,7 @@ namespace UsersManagement.Services
             var userId = await _repository.CreateUserAsync(newUser);
             return (SignUpStatus.CreateUserSuccess, userId);
         }
-
+        //-----------------------------------
         public async Task<string> TokenGenerator(Guid userId, DateTime expireDate)
         {
             string tokenStr = Guid.NewGuid().ToString();
@@ -118,7 +115,16 @@ namespace UsersManagement.Services
             });
             return tokenStr;
         }
-
-       
+        //-----------------------------------
+        public async Task<(SignInStatus status, Guid userId)> SignIn(SignInDto signIn)
+        {
+            if (await _repository.IsExistByUserNameAsync(signIn.UserName))
+                return (SignInStatus.UsernameIncorrect, Guid.Empty);
+            var user =await _repository.FindByUserNameAsync(signIn.UserName);
+            if(user.PasswordHash != signIn.PasswordHash)
+                return (SignInStatus.PasswordIncorrect, Guid.Empty);
+            return (SignInStatus.Success, user.Id);
+        }
+        //-----------------------------------
     }
 }

@@ -13,5 +13,6 @@ public interface IUserRepository
     bool IsExistByEmail(string email);
     Task<bool> IsExistByEmailAsync(string email);
     Task Update(Guid userId, UserRecord user);
+    Task<UserRecord> FindByUserNameAsync(string username);
 
 }
